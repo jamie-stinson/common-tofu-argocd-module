@@ -7,4 +7,5 @@ resource "helm_release" "argocd" {
   values           = [var.argocd.values]
   create_namespace = true
   timeout          = 600
+  wait             = true
 }
