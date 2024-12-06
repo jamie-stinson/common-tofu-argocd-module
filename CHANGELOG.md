@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.1.0...v0.2.0) (2024-12-06)
+
+
+### Features
+
+* include break glass user credentials ([b7191e9](https://github.com/jamie-stinson/common-argocd-talos-module/commit/b7191e9939e3a70d18de0fccc9779fe184c4b1f0))
+
 ## 0.1.0 (2024-12-06)
 
 
