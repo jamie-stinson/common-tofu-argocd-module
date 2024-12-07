@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.2.1...v0.3.0) (2024-12-07)
+
+
+### Features
+
+* generate argocd admin password ([#5](https://github.com/jamie-stinson/common-argocd-talos-module/issues/5)) ([3ff1fd5](https://github.com/jamie-stinson/common-argocd-talos-module/commit/3ff1fd557643ca437340ac3a0ee49d967eacbf60))
+
 ## [0.2.1](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.2.0...v0.2.1) (2024-12-07)
 
 
