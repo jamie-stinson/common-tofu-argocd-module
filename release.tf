@@ -13,7 +13,8 @@ resource "helm_release" "argocd" {
         }
       }
     })
-  ]  create_namespace = true
+  ]
+  create_namespace = true
   timeout          = 600
   wait             = true
 }
