@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/jamie-stinson/common-argocd-module/compare/v0.4.2...v0.4.3) (2024-12-08)
+
+
+### Bug Fixes
+
+* add missing cluster config ([#17](https://github.com/jamie-stinson/common-argocd-module/issues/17)) ([4c4e0a8](https://github.com/jamie-stinson/common-argocd-module/commit/4c4e0a8a04f1872c4717ead5c82d2cc2c7b86209))
+* missing environment variable ([#15](https://github.com/jamie-stinson/common-argocd-module/issues/15)) ([6a2e5b3](https://github.com/jamie-stinson/common-argocd-module/commit/6a2e5b36e244671dcd0346a91a5f6123656bdf3d))
+
 ## [0.4.2](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.4.1...v0.4.2) (2024-12-08)
 
 
