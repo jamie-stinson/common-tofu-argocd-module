@@ -1,7 +1,7 @@
 resource "argocd_project" "this" {
   metadata {
     name      = "${var.environment}"
-    namespace = "${var.argocd.namespace}
+    namespace = "${var.argocd.namespace}"
   }
   spec {
     source_namespaces = ["*"]
