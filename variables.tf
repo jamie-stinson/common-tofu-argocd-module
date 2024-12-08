@@ -1,5 +1,6 @@
 variable "argocd" {
   type = object({
-    values = string
+    namespace = string
+    values    = string
   })
 }
