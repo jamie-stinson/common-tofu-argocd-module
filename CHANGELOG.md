@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.0](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.3.0...v0.4.0) (2024-12-08)
+
+
+### Features
+
+* add cluster ([#9](https://github.com/jamie-stinson/common-argocd-talos-module/issues/9)) ([d188603](https://github.com/jamie-stinson/common-argocd-talos-module/commit/d18860320d09f9a7d2ebc53b3cf361bcc0e267d8))
+* add project ([#7](https://github.com/jamie-stinson/common-argocd-talos-module/issues/7)) ([b1963f6](https://github.com/jamie-stinson/common-argocd-talos-module/commit/b1963f69e6d4c1906125e594a1bb42ae42557ddc))
+* add repository ([#10](https://github.com/jamie-stinson/common-argocd-talos-module/issues/10)) ([591a3f5](https://github.com/jamie-stinson/common-argocd-talos-module/commit/591a3f550dd162b610f2524670b83e685b236997))
+
 ## [0.3.0](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.2.1...v0.3.0) (2024-12-07)
 
 
