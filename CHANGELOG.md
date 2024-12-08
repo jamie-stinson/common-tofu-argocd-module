@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/jamie-stinson/common-argocd-module/compare/v0.4.3...v0.4.4) (2024-12-08)
+
+
+### Bug Fixes
+
+* config environment quote fix ([#18](https://github.com/jamie-stinson/common-argocd-module/issues/18)) ([d12b1dc](https://github.com/jamie-stinson/common-argocd-module/commit/d12b1dc9454afbc24684e4c5a2933331034b6ec0))
+
 ## [0.4.3](https://github.com/jamie-stinson/common-argocd-module/compare/v0.4.2...v0.4.3) (2024-12-08)
 
 
