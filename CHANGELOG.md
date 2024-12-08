@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.4.0...v0.4.1) (2024-12-08)
+
+
+### Bug Fixes
+
+* quote typo ([#11](https://github.com/jamie-stinson/common-argocd-talos-module/issues/11)) ([6add493](https://github.com/jamie-stinson/common-argocd-talos-module/commit/6add4933a2bf548f6c3fc3ef1b11edd6dc133eff))
+
 ## [0.4.0](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.3.0...v0.4.0) (2024-12-08)
 
 
