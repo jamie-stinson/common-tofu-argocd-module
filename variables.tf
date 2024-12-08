@@ -4,3 +4,7 @@ variable "argocd" {
     values    = string
   })
 }
+
+variable "environment" {
+  type = string
+}
