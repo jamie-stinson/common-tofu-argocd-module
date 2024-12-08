@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.4.1...v0.4.2) (2024-12-08)
+
+
+### Bug Fixes
+
+* add argocd provider ([#13](https://github.com/jamie-stinson/common-argocd-talos-module/issues/13)) ([eaddfc7](https://github.com/jamie-stinson/common-argocd-talos-module/commit/eaddfc7f0d9d418872d8aa0b9f8200842ad25eef))
+
 ## [0.4.1](https://github.com/jamie-stinson/common-argocd-talos-module/compare/v0.4.0...v0.4.1) (2024-12-08)
 
 
