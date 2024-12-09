@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/jamie-stinson/common-argocd-module/compare/v0.4.4...v0.4.5) (2024-12-09)
+
+
+### Bug Fixes
+
+* config block for cluster ([#20](https://github.com/jamie-stinson/common-argocd-module/issues/20)) ([c89bb4d](https://github.com/jamie-stinson/common-argocd-module/commit/c89bb4dc686a54d1a53724b0d5f5da372b9cbffc))
+
 ## [0.4.4](https://github.com/jamie-stinson/common-argocd-module/compare/v0.4.3...v0.4.4) (2024-12-08)
 
 
