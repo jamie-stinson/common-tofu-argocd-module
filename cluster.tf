@@ -1,6 +1,6 @@
 resource "argocd_cluster" "this" {
   server = "https://kubernetes.default.svc"
-  config = {
+  config {
     name = "${var.environment}"
   }
 }
