@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.4.5...v0.5.0) (2024-12-16)
+
+
+### Features
+
+* replace service with redis-ha ([#23](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/23)) ([86c99bd](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/86c99bdad91e2b6e58b2e75ffac5a14464d08dc1))
+
 ## [0.4.5](https://github.com/jamie-stinson/common-argocd-module/compare/v0.4.4...v0.4.5) (2024-12-09)
 
 
