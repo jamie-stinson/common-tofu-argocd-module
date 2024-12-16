@@ -12,12 +12,8 @@ resource "helm_release" "argocd" {
 
   values = [
     yamlencode({
-      server = {
-        service = {
-          type          = "NodePort"
-          nodePortHttp  = "32080"
-          nodePortHttps = "32443"
-        }
+      redis-ha = {
+        enabled = "true"
       }
     })
   ]
