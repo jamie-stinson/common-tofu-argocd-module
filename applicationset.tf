@@ -8,7 +8,7 @@ resource "argocd_application_set" "this" {
     generator {
       git {
         file {
-          path = "charts/*/environments/${var.environment}/values.yaml"
+          path = "charts/*/environments/${var.environment}/*/values.yaml"
         }
         repo_url = "https://github.com/jamie-stinson/helm-system-monorepo"
         revision = "HEAD"
