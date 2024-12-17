@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.5.0...v0.6.0) (2024-12-17)
+
+
+### Features
+
+* replace redis-ha with global logging ([#25](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/25)) ([203229b](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/203229bbed21dc0883de13faee8327758f11a530))
+
+
+### Bug Fixes
+
+* add namespace path to git generator ([#27](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/27)) ([fd23eb7](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/fd23eb7406aa55cc5837f7c621bcf1a9c764b40c))
+
 ## [0.5.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.4.5...v0.5.0) (2024-12-16)
 
 
