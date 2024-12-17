@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.6.0...v0.6.1) (2024-12-17)
+
+
+### Bug Fixes
+
+* app path fix ([#28](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/28)) ([f323ed4](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/f323ed47a29db2061066b876cd14286258e4f4b9))
+
 ## [0.6.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.5.0...v0.6.0) (2024-12-17)
 
 
