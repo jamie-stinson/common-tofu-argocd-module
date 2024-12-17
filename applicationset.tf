@@ -39,7 +39,7 @@ resource "argocd_application_set" "this" {
           helm {
             release_name = "{{ index .path.segments 1 }}"
 
-            value_files = [
+            values_files = [
               "$values/charts/{{ index .path.segments 1 }}/global-values.yaml",
               "$values/charts/{{ index .path.segments 1 }}/environments/{{ index .path.segments 3 }}/{{ index .path.segments 4 }}/values.yaml"
             ]
