@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.6.1...v0.6.2) (2024-12-17)
+
+
+### Bug Fixes
+
+* values files typo ([#30](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/30)) ([446582d](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/446582d382553bbd77e51506fb4d6d0df250f826))
+
 ## [0.6.1](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.6.0...v0.6.1) (2024-12-17)
 
 
