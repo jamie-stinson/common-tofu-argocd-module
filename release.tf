@@ -12,8 +12,10 @@ resource "helm_release" "argocd" {
 
   values = [
     yamlencode({
-      redis-ha = {
-        enabled = "true"
+      global = {
+        logging = {
+          format = "json"
+        }
       }
     })
   ]
