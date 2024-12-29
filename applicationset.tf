@@ -1,84 +1,67 @@
-resource "argocd_application_set" "this" {
-  metadata {
-    name      = "this"
-    namespace = "argocd"
-  }
-
-  spec {
-    generator {
-      git {
-        file {
-          path = "charts/*/environments/${var.environment}/*/values.yaml"
-        }
-        repo_url = "https://github.com/jamie-stinson/helm-system-monorepo"
-        revision = "HEAD"
-      }
-    }
-
-    go_template         = true
-    go_template_options = ["missingkey=error"]
-
-    template {
-      metadata {
-        name = "{{ index .path.segments 1 }}-{{ index .path.segments 3 }}"
-      }
-
-      spec {
-        destination {
-          name      = "{{ index .path.segments 3 }}"
-          namespace = "{{ index .path.segments 4 }}"
-        }
-
-        revision_history_limit = 3
-
-        source {
-          repo_url        = "{{ .global.repository }}"
-          chart           = "{{ .global.chart }}"
-          target_revision = "{{ .global.version }}"
-
-          helm {
-            release_name = "{{ index .path.segments 1 }}"
-
-            values_files = [
-              "$values/charts/{{ index .path.segments 1 }}/global-values.yaml",
-              "$values/charts/{{ index .path.segments 1 }}/environments/{{ index .path.segments 3 }}/{{ index .path.segments 4 }}/values.yaml"
-            ]
-          }
-        }
-
-        source {
-          repo_url        = "https://github.com/jamie-stinson/helm-system-monorepo"
-          target_revision = "HEAD"
-          ref             = "values"
-        }
-
-        sync_policy {
-          automated {
-            allow_empty = true
-            prune       = true
-            self_heal   = true
-          }
-
-          retry {
-            backoff {
-              duration     = "5s"
-              factor       = 2
-              max_duration = "3m"
-            }
-            limit = 5
-          }
-
-          sync_options = [
-            "Validate=true",
-            "CreateNamespace=true",
-            "PrunePropagationPolicy=foreground",
-            "PruneLast=true",
-            "ServerSideApply=true",
-            "RespectIgnoreDifferences=false",
-            "ApplyOutOfSyncOnly=false"
-          ]
-        }
-      }
-    }
-  }
+resource "kubectl_manifest" "applicationset" {
+    yaml_body = <<YAML
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: external
+  namespace: ${var.argocd.namespace}
+spec:
+  generators:
+    - git:
+        files:
+          - path: charts/*/environments/${var.environment}/values.yaml
+        repoURL: https://github.com/jamie-stinson/helm-system-monorepo.git
+        revision: HEAD
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+  template:
+    metadata:
+      name: "{{ index .path.segments 1 }}"
+    spec:
+      destination:
+        name: "in-cluster"
+        namespace: "{{ index .path.segments 1 }}"
+      project: "{{ index .path.segments 3 }}"
+      revisionHistoryLimit: 3
+      sources:
+        - repoURL: "{{ .global.repository }}"
+          chart: "{{ .global.chart }}"
+          targetRevision: "{{ .global.version }}"
+          helm:
+            releaseName: "{{ index .path.segments 1 }}"
+            valueFiles:
+              - "$values/global-values.yaml"
+              - "$values/charts/{{ index .path.segments 1 }}/values.yaml"
+              - "$values/charts/{{ index .path.segments 1 }}/environments/{{ index .path.segments 3 }}/values.yaml"
+            values: |
+              nameOverride: {{ index .path.segments 1 }}
+              fullnameOverride: {{ index .path.segments 1 }}
+        - repoURL: https://github.com/jamie-stinson/helm-system-monorepo.git
+          targetRevision: HEAD
+          ref: values
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          prune: true
+          selfHeal: true
+        retry:
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
+          limit: 5
+        syncOptions:
+          - Validate=true
+          - CreateNamespace=true
+          - PrunePropagationPolicy=foreground
+          - PruneLast=true
+          - ServerSideApply=true
+          - RespectIgnoreDifferences=false
+          - ApplyOutOfSyncOnly=false
+YAML
+  depends_on  = [
+    helm_release.this,
+    kubectl_manifest.project
+  ]
 }
