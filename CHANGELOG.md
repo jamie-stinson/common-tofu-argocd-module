@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.6.2...v0.7.0) (2024-12-29)
+
+
+### Features
+
+* refactor ([#32](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/32)) ([498f436](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/498f436336e3c5f4d7fb5f89cdc62eea3d260052))
+
 ## [0.6.1](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.6.0...v0.6.1) (2024-12-17)
 
 
