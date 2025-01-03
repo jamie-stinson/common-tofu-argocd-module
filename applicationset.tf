@@ -1,4 +1,7 @@
 resource "kubectl_manifest" "applicationset" {
+    sensitive_fields = [
+        "spec.template.spec.sources"
+    ]
     yaml_body = <<YAML
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
@@ -13,33 +16,36 @@ spec:
         repoURL: https://github.com/jamie-stinson/helm-system-monorepo.git
         revision: HEAD
   goTemplate: true
-  goTemplateOptions:
-    - missingkey=error
   template:
     metadata:
       name: "{{ index .path.segments 1 }}"
     spec:
       destination:
         name: "in-cluster"
-        namespace: "{{ index .path.segments 1 }}"
+        namespace: "{{ if .namespace }}{{ .namespace }}{{ else }}{{ index .path.segments 1 }}{{ end }}"
       project: "{{ index .path.segments 3 }}"
       revisionHistoryLimit: 3
       sources:
-        - repoURL: "{{ .global.repository }}"
-          chart: "{{ .global.chart }}"
-          targetRevision: "{{ .global.version }}"
+        - repoURL: "ghcr.io/jamie-stinson/common-helm-library"
+          chart: "common-helm-library"
+          targetRevision: "1.*.*"
           helm:
             releaseName: "{{ index .path.segments 1 }}"
             valueFiles:
               - "$values/global-values.yaml"
               - "$values/charts/{{ index .path.segments 1 }}/values.yaml"
               - "$values/charts/{{ index .path.segments 1 }}/environments/{{ index .path.segments 3 }}/values.yaml"
-            values: |
-              nameOverride: {{ index .path.segments 1 }}
-              fullnameOverride: {{ index .path.segments 1 }}
+            valuesObject:
+              certificate:
+                cloudflareApiToken: "${var.cloudflare_api_token}"
+                domain: "${var.cloudflare_domain}"
+                email: "${var.cloudflare_email}"
+              ingress:
+                domain: "${var.cloudflare_domain}"
         - repoURL: https://github.com/jamie-stinson/helm-system-monorepo.git
           targetRevision: HEAD
           ref: values
+          path: charts/{{ index .path.segments 1 }}/crds
       syncPolicy:
         automated:
           allowEmpty: true
