@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.8.0...v0.9.0) (2025-01-03)
+
+
+### Features
+
+* use alternative port for argocd ([#36](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/36)) ([8ada617](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/8ada617df8c250ec31ac12b7400f003c3a819a65))
+
 ## [0.8.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.7.0...v0.8.0) (2025-01-03)
 
 
