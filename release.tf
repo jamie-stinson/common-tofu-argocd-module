@@ -10,6 +10,8 @@ resource "helm_release" "this" {
 server:
   service:
     type: NodePort
+    nodePortHttp: "30081"
+    nodePortHttps: "30444"
 EOF
   ]
 }
