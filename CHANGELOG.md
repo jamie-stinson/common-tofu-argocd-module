@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.9.0...v0.10.0) (2025-01-05)
+
+
+### Features
+
+* refactor for common-helm-library ([#38](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/38)) ([08f516f](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/08f516f4e505678ba023e0d8906b56e2f595b214))
+
 ## [0.9.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.8.0...v0.9.0) (2025-01-03)
 
 
