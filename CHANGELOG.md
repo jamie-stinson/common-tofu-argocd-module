@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.11.0...v0.12.0) (2025-01-05)
+
+
+### Features
+
+* add insecure param to release ([#42](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/42)) ([45bc3d1](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/45bc3d17d1b6d01d73b3f0be66869b9373e5994b))
+
 ## [0.11.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.10.0...v0.11.0) (2025-01-05)
 
 
