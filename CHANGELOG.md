@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.12.0...v0.13.0) (2025-01-05)
+
+
+### Features
+
+* applicationset optimisation ([#44](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/44)) ([3eb0127](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/3eb0127f7a74ac534b9342436312639a96001b63))
+
 ## [0.12.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.11.0...v0.12.0) (2025-01-05)
 
 
