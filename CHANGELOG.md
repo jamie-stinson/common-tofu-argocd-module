@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.10.0...v0.11.0) (2025-01-05)
+
+
+### Features
+
+* apply cloudflare api token to ingress-certificate app only ([#40](https://github.com/jamie-stinson/common-tofu-argocd-module/issues/40)) ([a4742be](https://github.com/jamie-stinson/common-tofu-argocd-module/commit/a4742be84661070431377533d7969282ff68d551))
+
 ## [0.10.0](https://github.com/jamie-stinson/common-tofu-argocd-module/compare/v0.9.0...v0.10.0) (2025-01-05)
 
 
