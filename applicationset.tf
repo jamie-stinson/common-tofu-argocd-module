@@ -1,6 +1,7 @@
 resource "kubectl_manifest" "applicationset" {
     sensitive_fields = [
-        "spec.templatePatch"
+        "spec.templatePatch",
+        "spec.template.spec.sources"
     ]
     yaml_body = <<YAML
 apiVersion: argoproj.io/v1alpha1
@@ -26,6 +27,18 @@ spec:
       project: "{{ index .path.segments 3 }}"
       revisionHistoryLimit: 3
       sources:
+        - repoURL: "ghcr.io/jamie-stinson/common-helm-library"
+          chart: "common-helm-library"
+          targetRevision: "1.*.*"
+          helm:
+            releaseName: "{{ index .path.segments 1 }}"
+            valueFiles:
+              - "$values/global-values.yaml"
+              - "$values/charts/{{ index .path.segments 1 }}/values.yaml"
+              - "$values/charts/{{ index .path.segments 1 }}/environments/{{ index .path.segments 3 }}/values.yaml"
+            valuesObject:
+              ingress:
+                domain: "${var.cloudflare_domain}"
         - repoURL: https://github.com/jamie-stinson/helm-system-monorepo.git
           targetRevision: HEAD
           ref: values
@@ -70,6 +83,10 @@ spec:
               ingress:
                 domain: "${var.cloudflare_domain}"
             {{- end }}
+        - repoURL: https://github.com/jamie-stinson/helm-system-monorepo.git
+          targetRevision: HEAD
+          ref: values
+          path: charts/{{ index .path.segments 1 }}/crds
 YAML
   depends_on  = [
     helm_release.this,
