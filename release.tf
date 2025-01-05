@@ -7,11 +7,9 @@ resource "helm_release" "this" {
   timeout          = 1200
   create_namespace = true
   values           = [<<EOF
-server:
-  service:
-    type: NodePort
-    nodePortHttp: "30081"
-    nodePortHttps: "30444"
+configs:
+  params:
+    server.insecure: "true"
 EOF
   ]
 }
